@@ -11,6 +11,5 @@ class PostController extends Controller
     {
         $posts = Post::find()->all();
         return $this->render('index', compact('posts'));
-
     }
 }
