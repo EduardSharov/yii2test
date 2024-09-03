@@ -48,7 +48,7 @@ $this->title = Yii::$app->name;
                 <?php foreach ($posts as $post): ?>
                     <div class="col-md-3">
                         <div class="single-post">
-                            <?= \yii\helpers\Html::img("@web/{$post->img}") ?>
+                            <?= \yii\helpers\Html::img("@web/{$post->img}") ?> ?????????
                             <h3><a href="<?= \yii\helpers\Url::to(['post/view', 'id' => $post->id]) ?>"><?= $post->title ?></a></h3>
                             <h4 ><span>Posted By: <span class ="author-name>Kabbo Liate"</span></h4>
                             <h4><span><?= $post->created_at ?> </span></h4>
