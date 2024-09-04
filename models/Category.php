@@ -14,3 +14,5 @@ class Category extends  ActiveRecord
 
 
 }
+
+$this->createIndex('{{%idx_category_alias}}', '{{%category}}', 'alias');
