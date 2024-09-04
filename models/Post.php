@@ -1,9 +1,9 @@
 <?php
 
 namespace app\models;
-
 use yii\db\ActiveRecord;
-
+use yii\behaviors\TimestampBehavior;
+use yii\db\Expression;
 
 class Post extends ActiveRecord
 {
@@ -15,12 +15,20 @@ class Post extends ActiveRecord
     public function behaviors()
     {
         return [
-            TimestampBehavior::class,
+            [
+                'class' => TimestampBehavior::class,
+                'createdAtAttribute' => 'create_time',
+                'updatedAtAttribute' => 'update_time',
+                'value' => new Expression('NOW()'),
+            ],
         ];
     }
+
+
 
     public function getCategory()
     {
         return $this->hasOne(Category::class, ['id'=> 'category_id']);
     }
+
 }
