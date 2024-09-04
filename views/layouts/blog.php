@@ -3,7 +3,7 @@ use app\assets\AppAsset;
 use yii\helpers\Html;
 
 \app\assets\AppAsset::register($this);
-
+/** @var TYPE_NAME $content */
 ?>
 <?php $this->beginPage() ?>
 
@@ -11,6 +11,7 @@ use yii\helpers\Html;
     <html lang="<?= Yii::$app->language ?>">
 
 <head>
+    <base href="/">
     <meta charset="<?= Yii::$app->charset?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $this->registerCsrfMetaTags() ?>

@@ -50,10 +50,12 @@ $this->title = Yii::$app->name;
                         <div class="single-post">
                             <?= \yii\helpers\Html::img("@web/img/{$post->img}") ?>
                             <h3><a href="<?= \yii\helpers\Url::to(['post/view', 'id' => $post->id]) ?>"><?= $post->title ?></a></h3>
-                            <h4 ><span>Category:<span class ="author-name"
-                                    <a href="<?= \yii\helpers\Url::to
-                                    (['category/view','alias'=> $post->category->alias])  ?>">
+                            <h4 ><span>Category:<span class ="author-name">
+                                        <a href="<?= \yii\helpers\Url::to
+                                        (['category/view', 'alias'=> $post->category->alias])  ?>">
                                         <?= $post->category->title?></a>
+                                    </span>
+
                                 </span>
                             </h4>
                             <?= $post->excerpt ?>
