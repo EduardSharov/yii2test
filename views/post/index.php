@@ -48,10 +48,16 @@ $this->title = Yii::$app->name;
                 <?php foreach ($posts as $post): ?>
                     <div class="col-md-3">
                         <div class="single-post">
-                            <?= \yii\helpers\Html::img("@web/{$post->img}") ?> ?????????
+                            <?= \yii\helpers\Html::img("@web/img/{$post->img}") ?>
                             <h3><a href="<?= \yii\helpers\Url::to(['post/view', 'id' => $post->id]) ?>"><?= $post->title ?></a></h3>
-                            <h4 ><span>Posted By: <span class ="author-name>Kabbo Liate"</span></h4>
-                            <h4><span><?= $post->created_at ?> </span></h4>
+                            <h4 ><span>Category:<span class ="author-name"
+                                    <a href="<?= \yii\helpers\Url::to
+                                    (['category/view','alias'=> $post->category->alias])  ?>">
+                                        <?= $post->category->title?></a>
+                                </span>
+                            </h4>
+                            <?= $post->excerpt ?>
+                            <h4><span><?= Yii::$app->formatter->asDate($post->created_at)?> </span></h4>
                         </div>
                     </div>
                 <?php endforeach; ?>
